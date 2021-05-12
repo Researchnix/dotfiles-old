@@ -1,0 +1,9 @@
+#!/usr/local/bin/zsh
+
+# open the file which is passed on to this script as an argument with
+# the right kind of editor or viewer.
+# .pdf -> preview
+# .py -> nvim
+# ...
+# also always change to the directory of the file before opening it
+# to ensure that nerdtree expands in that ambient directory.

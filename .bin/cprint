@@ -1,0 +1,16 @@
+#!/bin/bash
+# cprint: copy files to a temporary directory on coxeter, then pass all
+# parameters to Print. Only supports printing one file at a time.
+
+if [ ! -f ${@: -1} ]; then
+  echo "File does not exist."
+elif [ $# = 0 ]; then
+  echo Usage: $0 [options] file
+  exit
+else
+  echo Copying ${@: -1} to coxeter...
+  scp ${@: -1} coxeter:print/PRINT_TEMP.pdf
+  echo Printing file...
+  set -- "${@:1:(($#-1))}"
+  ssh coxeter "Print $@ ~/print/PRINT_TEMP.pdf; rm ~/print/PRINT_TEMP.pdf"
+fi

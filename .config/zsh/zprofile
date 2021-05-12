@@ -1,3 +1,24 @@
-if [[ "$(tty)" = "/dev/tty1" ]]; then
-	pgrep xmonad || startx "$HOME/.config/x11/xinitrc"
-fi
+#!/bin/zsh
+# .profile to be run at login
+
+# only uncomment this if you need it
+# if [[ "$(tty)" = "/dev/tty1" ]]; then
+# 	pgrep xmonad || startx "$HOME/.config/x11/xinitrc"
+# fi
+
+
+
+export ZDOTDIR="$HOME/.config/zsh/"
+
+
+
+# default programs
+export EDITOR="nvim"
+export PDF="mupdf"
+export TERMINAL="urxvt"
+export BROWSER="firefox"
+export FILE="vifm"
+
+# default files
+# export BIB=""
+

@@ -1,0 +1,42 @@
+#!/bin/bash
+
+
+DIR=$(pwd)
+RAW="${DIR}/${1}.CR2"
+JPG="${DIR}/${1}.jpg"
+
+
+# echo "Script executed in ${DIR} on "
+# echo "transfering time from ${RAW} to ${JPG}"
+# exiftool -s "${JPG}"
+# exiftool -TagsFromFile ${RAW} "-FileModifyDate" ${JPG}
+# exiftool -TagsFromFile ${RAW} "-ExposureTime" ${JPG}
+
+
+exiftool -TagsFromFile ${RAW} \
+    "-AllDates>AllDates" \
+    "-Make" \
+    "-Model" \
+    "-Lens" \
+    "-FNumber" \
+    "-Flash" \
+    "-ISO" \
+    "-MeeteringMode" \
+    "-FocalLength" \
+    "-ExposureTime" \
+    "-ExposureCompensation" \
+    "-ApertureValue" \
+    "-ApplicationRecordVersion" \
+    "-ColorComponents" \
+    "-ShutterSpeedValue" \
+    # "-WhiteBalance" \
+    ${JPG}
+
+# TODO find way to transfer the white balance or everything
+# but the orientation and maybe a few other things.
+
+# exiftool -TagsFromFile ${RAW} "-all" ${JPG}
+
+rm ${JPG}_original
+
+echo "transfer complete"

@@ -1,0 +1,16 @@
+#!/usr/local/bin/zsh
+
+# todo
+# run this script with name of current file in vim
+
+DIR=$(pwd)
+echo "This program was called in $DIR."
+echo "to live execute $1"
+
+echo "\nEntering autoexecution mode"
+fswatch -l 2 -o -e ".*" -i "\\.py" . | while read; \
+    do \
+        clear
+        python3 "$DIR/$1"
+        echo "\n\nEND OF RUN"
+    done

@@ -1,0 +1,26 @@
+# set home-page = "/home/lennart/homepage.html"
+
+set dark-mode=on
+
+
+
+
+set editor-command=alacritty -e nvim %s
+set home-page=https://www.google.com
+set download-path=~/Downloads
+set font-size=16
+
+shortcut-add dic=https://www.dict.cc/?s=$0
+
+
+# maps
+
+nmap = zI
+nmap - zO
+
+# nmap H 
+# nmap L
+nmap J 5j
+nmap K 5k
+
+nmap ,q :qpush<CR>

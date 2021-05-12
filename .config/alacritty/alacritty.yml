@@ -1,15 +1,408 @@
 font:
-        normal:
-                family: mononoki Nerd Font Mono
-                style: Regular
-        bold:
-                family: mononoki Nerd Font Mono
-                style: Bold
-        italic:
-                family: mononoki Nerd Font Mono
-                style: Italic
-        bold_italic:
-                family: mononoki Nerd Font Mono
-                style: Bold Italic
+# alacrity configuration
 
-        size: 9
+window:
+
+    dynamic_title: true
+
+    dimensions:
+        columns: 140
+        lines: 40
+
+    position:
+        x: 180
+        y: 40
+    padding:
+        x: 0
+        y: 0
+
+    dynamic_padding: true
+    decorations: none                       # buttonless or none
+    startup_mode:  Maximized                # SimpleFullscreen Windowed Maximized Fullscreen
+
+    title: terminal
+scrolling:
+    history: 10000
+    multiplier: 3
+
+background_opacity: 1
+
+font:
+    normal:
+            family: UbuntuMono Nerd Font
+            style: Regular
+    bold:
+            family: UbuntuMono Nerd Font
+            style: Bold
+    italic:
+            family: UbuntuMono Nerd Font
+            style: Italic
+    bold_italic:
+            family: UbuntuMono Nerd Font
+            style: Bold Italic
+
+    size: 13
+
+
+    offset:
+        x: 0
+        y: 0
+
+    glyph_offset:
+        x: 0
+        y: 0
+
+
+
+    # defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO
+    use_thin_strokes: true
+
+    draw_bold_text_with_bright_colors: true
+
+
+
+colors:
+  # Default colors
+  primary:
+    background: '#2c2c2c'
+    foreground: '#d6d6d6'
+
+    dim_foreground:    '#dbdbdb'
+    bright_foreground: '#d9d9d9'
+
+    dim_background:    '#202020' # not sure
+    bright_background: '#3a3a3a' # not sure
+
+  # Cursor colors
+  cursor:
+    text:   '#2c2c2c'
+    cursor: '#d9d9d9'
+
+  # vi_mode_cursor:
+    # text: '#000000'
+    # cursor: '#7aa6da'
+
+  # selection:
+    # text: '#eaeaea'
+    # background: '#404040'
+
+  # Normal colors
+  normal:
+    black:   '#1c1c1c'
+    red:     '#bc5653'
+    green:   '#909d63'
+    yellow:  '#ebc17a'
+    blue:    '#7eaac7'
+    magenta: '#aa6292'
+    cyan:    '#86d3ce'
+    white:   '#cacaca'
+
+  # Bright colors
+  bright:
+    black:   '#636363'
+    red:     '#bc5653'
+    green:   '#909d63'
+    yellow:  '#ebc17a'
+    blue:    '#7eaac7'
+    magenta: '#aa6292'
+    cyan:    '#86d3ce'
+    white:   '#f7f7f7'
+
+  # Dim colors
+  dim:
+    black:   '#232323'
+    red:     '#74423f'
+    green:   '#5e6547'
+    yellow:  '#8b7653'
+    blue:    '#556b79'
+    magenta: '#6e4962'
+    cyan:    '#5c8482'
+    white:   '#828282'
+
+
+
+bell:
+    animation: Ease
+    duration: 3
+    color: '#ffffff'
+
+
+selection:
+  #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+
+    save_to_clipboard: true
+
+
+cursor:
+    style: Block                            # Block Underline Beam
+    vi_mode_style: None
+    unfocused_hollow: false
+    thickness: 0.15
+
+live_config_reload: true
+
+# shell:
+    # program: /usr/local/bin/zsh
+    # args: --login
+
+# working_directory: '/Users/lennart/'
+
+# WinPTY backend (Windows only)
+#
+# Alacritty defaults to using the newer ConPTY backend if it is available,
+# since it resolves a lot of bugs and is quite a bit faster. If it is not
+# available, the the WinPTY backend will be used instead.
+#
+# Setting this option to `true` makes Alacritty use the legacy WinPTY backend,
+# even if the ConPTY backend is available.
+#winpty_backend: false
+
+# Send ESC (\x1b) before characters when alt is pressed.
+#alt_send_esc: true
+
+mouse:
+    double_click: { threshold: 300 }
+    triple_click: { threshold: 300 }
+
+    hide_when_typing: true
+
+    url:
+        launcher:
+            program: open
+            args: []
+        modifiers: None
+
+
+
+
+
+# Mouse bindings
+#
+# Mouse bindings are specified as a list of objects, much like the key
+# bindings further below.
+#
+# To trigger mouse bindings when an application running within Alacritty captures the mouse, the
+# `Shift` modifier is automatically added as a requirement.
+#
+# Each mouse binding will specify a:
+#
+# - `mouse`:
+#
+#   - Middle
+#   - Left
+#   - Right
+#   - Numeric identifier such as `5`
+#
+# - `action` (see key bindings)
+#
+# And optionally:
+#
+# - `mods` (see key bindings)
+#mouse_bindings:
+#  - { mouse: Middle, action: PasteSelection }
+
+# Key bindings
+#
+# Key bindings are specified as a list of objects. For example, this is the
+# default paste binding:
+#
+# `- { key: V, mods: Control|Shift, action: Paste }`
+#
+# Each key binding will specify a:
+#
+# - `key`: Identifier of the key pressed
+#
+#    - A-Z
+#    - F1-F24
+#    - Key0-Key9
+#
+#    A full list with available key codes can be found here:
+#    https://docs.rs/glutin/*/glutin/event/enum.VirtualKeyCode.html#variants
+#
+#    Instead of using the name of the keys, the `key` field also supports using
+#    the scancode of the desired key. Scancodes have to be specified as a
+#    decimal number. This command will allow you to display the hex scancodes
+#    for certain keys:
+#
+#       `showkey --scancodes`.
+#
+# Then exactly one of:
+#
+# - `chars`: Send a byte sequence to the running application
+#
+#    The `chars` field writes the specified string to the terminal. This makes
+#    it possible to pass escape sequences. To find escape codes for bindings
+#    like `PageUp` (`"\x1b[5~"`), you can run the command `showkey -a` outside
+#    of tmux. Note that applications use terminfo to map escape sequences back
+#    to keys. It is therefore required to update the terminfo when changing an
+#    escape sequence.
+#
+# - `action`: Execute a predefined action
+#
+#   - ToggleViMode
+#   - Copy
+#   - Paste
+#   - PasteSelection
+#   - IncreaseFontSize
+#   - DecreaseFontSize
+#   - ResetFontSize
+#   - ScrollPageUp
+#   - ScrollPageDown
+#   - ScrollLineUp
+#   - ScrollLineDown
+#   - ScrollToTop
+#   - ScrollToBottom
+#   - ClearHistory
+#   - Hide
+#   - Minimize
+#   - Quit
+#   - ToggleFullscreen
+#   - SpawnNewInstance
+#   - ClearLogNotice
+#   - ClearSelection
+#   - ReceiveChar
+#   - None
+#
+#   (`mode: Vi` only):
+#   - Open
+#   - Up
+#   - Down
+#   - Left
+#   - Right
+#   - First
+#   - Last
+#   - FirstOccupied
+#   - High
+#   - Middle
+#   - Low
+#   - SemanticLeft
+#   - SemanticRight
+#   - SemanticLeftEnd
+#   - SemanticRightEnd
+#   - WordRight
+#   - WordLeft
+#   - WordRightEnd
+#   - WordLeftEnd
+#   - Bracket
+#   - ToggleNormalSelection
+#   - ToggleLineSelection
+#   - ToggleBlockSelection
+#   - ToggleSemanticSelection
+#
+#   (macOS only):
+#   - ToggleSimpleFullscreen: Enters fullscreen without occupying another space
+#
+#   (Linux/BSD only):
+#   - CopySelection: Copies into selection buffer
+#
+# - `command`: Fork and execute a specified command plus arguments
+#
+#    The `command` field must be a map containing a `program` string and an
+#    `args` array of command line parameter strings. For example:
+#       `{ program: "alacritty", args: ["-e", "vttest"] }`
+#
+# And optionally:
+#
+# - `mods`: Key modifiers to filter binding actions
+#
+#    - Command
+#    - Control
+#    - Option
+#    - Super
+#    - Shift
+#    - Alt
+#
+#    Multiple `mods` can be combined using `|` like this:
+#       `mods: Control|Shift`.
+#    Whitespace and capitalization are relevant and must match the example.
+#
+# - `mode`: Indicate a binding for only specific terminal reported modes
+#
+#    This is mainly used to send applications the correct escape sequences
+#    when in different modes.
+#
+#    - AppCursor
+#    - AppKeypad
+#    - Alt
+#
+#    A `~` operator can be used before a mode to apply the binding whenever
+#    the mode is *not* active, e.g. `~Alt`.
+#
+# Bindings are always filled by default, but will be replaced when a new
+# binding with the same triggers is defined. To unset a default binding, it can
+# be mapped to the `ReceiveChar` action. Alternatively, you can use `None` for
+# a no-op if you do not wish to receive input characters for that binding.
+#
+# If the same trigger is assigned to multiple actions, all of them are executed
+# at once.
+#key_bindings:
+  #- { key: Paste,                                action: Paste          }
+  #- { key: Copy,                                 action: Copy           }
+  #- { key: L,         mods: Control,             action: ClearLogNotice }
+  #- { key: L,         mods: Control, mode: ~Vi,  chars: "\x0c"          }
+  #- { key: PageUp,    mods: Shift,   mode: ~Alt, action: ScrollPageUp,  }
+  #- { key: PageDown,  mods: Shift,   mode: ~Alt, action: ScrollPageDown }
+  #- { key: Home,      mods: Shift,   mode: ~Alt, action: ScrollToTop,   }
+  #- { key: End,       mods: Shift,   mode: ~Alt, action: ScrollToBottom }
+
+  # Vi Mode
+  #- { key: Space,  mods: Shift|Control, mode: Vi, action: ScrollToBottom          }
+  #- { key: Space,  mods: Shift|Control,           action: ToggleViMode            }
+  #- { key: Escape,                      mode: Vi, action: ClearSelection          }
+  #- { key: I,                           mode: Vi, action: ScrollToBottom          }
+  #- { key: I,                           mode: Vi, action: ToggleViMode            }
+  #- { key: Y,      mods: Control,       mode: Vi, action: ScrollLineUp            }
+  #- { key: E,      mods: Control,       mode: Vi, action: ScrollLineDown          }
+  #- { key: G,                           mode: Vi, action: ScrollToTop             }
+  #- { key: G,      mods: Shift,         mode: Vi, action: ScrollToBottom          }
+  #- { key: B,      mods: Control,       mode: Vi, action: ScrollPageUp            }
+  #- { key: F,      mods: Control,       mode: Vi, action: ScrollPageDown          }
+  #- { key: U,      mods: Control,       mode: Vi, action: ScrollHalfPageUp        }
+  #- { key: D,      mods: Control,       mode: Vi, action: ScrollHalfPageDown      }
+  #- { key: Y,                           mode: Vi, action: Copy                    }
+  #- { key: Y,                           mode: Vi, action: ClearSelection          }
+  #- { key: Copy,                        mode: Vi, action: ClearSelection          }
+  #- { key: V,                           mode: Vi, action: ToggleNormalSelection   }
+  #- { key: V,      mods: Shift,         mode: Vi, action: ToggleLineSelection     }
+  #- { key: V,      mods: Control,       mode: Vi, action: ToggleBlockSelection    }
+  #- { key: V,      mods: Alt,           mode: Vi, action: ToggleSemanticSelection }
+  #- { key: Return,                      mode: Vi, action: Open                    }
+  #- { key: K,                           mode: Vi, action: Up                      }
+  #- { key: J,                           mode: Vi, action: Down                    }
+  #- { key: H,                           mode: Vi, action: Left                    }
+  #- { key: L,                           mode: Vi, action: Right                   }
+  #- { key: Up,                          mode: Vi, action: Up                      }
+  #- { key: Down,                        mode: Vi, action: Down                    }
+  #- { key: Left,                        mode: Vi, action: Left                    }
+  #- { key: Right,                       mode: Vi, action: Right                   }
+  #- { key: Key0,                        mode: Vi, action: First                   }
+  #- { key: Key4,   mods: Shift,         mode: Vi, action: Last                    }
+  #- { key: Key6,   mods: Shift,         mode: Vi, action: FirstOccupied           }
+  #- { key: H,      mods: Shift,         mode: Vi, action: High                    }
+  #- { key: M,      mods: Shift,         mode: Vi, action: Middle                  }
+  #- { key: L,      mods: Shift,         mode: Vi, action: Low                     }
+  #- { key: B,                           mode: Vi, action: SemanticLeft            }
+  #- { key: W,                           mode: Vi, action: SemanticRight           }
+  #- { key: E,                           mode: Vi, action: SemanticRightEnd        }
+  #- { key: B,      mods: Shift,         mode: Vi, action: WordLeft                }
+  #- { key: W,      mods: Shift,         mode: Vi, action: WordRight               }
+  #- { key: E,      mods: Shift,         mode: Vi, action: WordRightEnd            }
+  #- { key: Key5,   mods: Shift,         mode: Vi, action: Bracket                 }
+
+
+  # (macOS only)
+  #- { key: K,      mods: Command, mode: ~Vi, chars: "\x0c"            }
+  #- { key: Key0,   mods: Command,            action: ResetFontSize    }
+  #- { key: Equals, mods: Command,            action: IncreaseFontSize }
+  #- { key: Add,    mods: Command,            action: IncreaseFontSize }
+  #- { key: Minus,  mods: Command,            action: DecreaseFontSize }
+  #- { key: K,      mods: Command,            action: ClearHistory     }
+  #- { key: V,      mods: Command,            action: Paste            }
+  #- { key: C,      mods: Command,            action: Copy             }
+  #- { key: C,      mods: Command, mode: Vi,  action: ClearSelection   }
+  #- { key: H,      mods: Command,            action: Hide             }
+  #- { key: M,      mods: Command,            action: Minimize         }
+  #- { key: Q,      mods: Command,            action: Quit             }
+  #- { key: W,      mods: Command,            action: Quit             }
+  #- { key: N,      mods: Command,            action: SpawnNewInstance }
+  #- { key: F,      mods: Command|Control,    action: ToggleFullscreen }
