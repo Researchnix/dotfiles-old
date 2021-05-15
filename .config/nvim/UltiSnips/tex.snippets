@@ -1,0 +1,894 @@
+# A valid snippet should starts with:
+#
+#		snippet trigger_word [ "description" [ options ] ]
+#
+# and end with:
+#
+#		endsnippet
+#
+# Snippet options:
+#
+#		b - Beginning of line.
+#		i - In-word expansion.
+#		w - Word boundary.
+#		r - Regular expression
+#		e - Custom context snippet
+#		A - Snippet will be triggered automatically, when condition matches.
+#
+# Basic example:
+#
+# snippet emitter "emitter properties" b
+# private readonly ${1} = new Emitter<$2>()
+# public readonly ${1/^_(.*)/$1/}: Event<$2> = this.$1.event
+# endsnippet
+#
+# Online reference: https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
+# testing area
+
+snippet decl "DeclareDocumentCommand"
+DeclareDocumentCommand{$1}{$2}{$3}$0
+endsnippet
+
+
+
+snippet ft "bold math font"
+\ft{$1}$0
+endsnippet
+
+
+snippet pmat "pmatrix" i
+\begin{pmatrix} ${1} \end{pmatrix} ${0}
+endsnippet
+
+
+
+snippet .le "less or equal" Ai
+≤
+endsnippet
+
+snippet .in "element in" Ai
+∈
+endsnippet
+
+snippet .dt "dot operator" Ai
+⋅
+endsnippet
+
+
+# surroundings
+
+snippet $$ "new line math mode" i
+$$ $1 $$ $0
+endsnippet
+
+snippet $ "inline math mode" i
+$ $1 $ $0
+endsnippet
+
+snippet ( "actual parentheses" i
+($1)$0
+endsnippet
+
+snippet ^ "superscript" i
+^{$1}$0
+endsnippet
+
+snippet _ "subscript" i
+_{$1}$0
+endsnippet
+
+snippet { "braces" i
+{$1}$0
+endsnippet
+
+snippet [ "brackets" i
+[$1]$0
+endsnippet
+
+
+
+
+# umlaut snippets
+
+snippet ;a "umlaut a" Ai
+ä
+endsnippet
+
+snippet ;o "umlaut o" Ai
+ö
+endsnippet
+
+snippet ;u "umlaut u" Ai
+ü
+endsnippet
+
+snippet ;A "umlaut a" Ai
+Ä
+endsnippet
+
+snippet ;O "umlaut o" Ai
+Ö
+endsnippet
+
+snippet ;U "umlaut u" Ai
+Ü
+endsnippet
+
+
+
+
+
+# lower case greek letters
+
+snippet ,a "alpha" Ai
+α
+endsnippet
+
+snippet ,b "beta" Ai
+β
+endsnippet
+
+snippet ,x "xi" Ai
+ξ
+endsnippet
+
+snippet ,d "delta" Ai
+δ
+endsnippet
+
+snippet ,e "epsilon" Ai
+ε
+endsnippet
+
+snippet ,f "phi" Ai
+φ
+endsnippet
+
+snippet ,g "gamma" Ai
+γ
+endsnippet
+
+snippet ,h "theta" Ai
+θ
+endsnippet
+
+snippet ,i "iota" Ai
+ι
+endsnippet
+
+snippet ,k "kappa" Ai
+κ
+endsnippet
+
+snippet ,l "lambda" Ai
+λ
+endsnippet
+
+snippet ,m "mu" Ai
+μ
+endsnippet
+
+snippet ,n "nu" Ai
+ν
+endsnippet
+
+snippet ,p "pi" Ai
+π
+endsnippet
+
+snippet ,q "psi" Ai
+ψ
+endsnippet
+
+snippet ,r "rho" Ai
+ρ
+endsnippet
+
+snippet ,s "sigma" Ai
+σ
+endsnippet
+
+snippet ,t "tau" Ai
+τ
+endsnippet
+
+snippet ,u "nu2" Ai
+υ
+endsnippet
+
+snippet ,w "omega" Ai
+ω
+endsnippet
+
+snippet ,c "chi" Ai
+χ
+endsnippet
+
+snippet ,y "eta" Ai
+η
+endsnippet
+
+snippet ,z "zeta" Ai
+ζ
+endsnippet
+
+
+# capital greek letters
+
+snippet ,X "Xi" Ai
+Ξ
+endsnippet
+
+snippet ,D "delta" Ai
+Δ
+endsnippet
+
+snippet ,F "Phi" Ai
+Φ
+endsnippet
+
+snippet ,G "Gamma" Ai
+Γ
+endsnippet
+
+snippet ,H "Theta" Ai
+Θ
+endsnippet
+
+snippet ,L "Lambda" Ai
+Λ
+endsnippet
+
+snippet ,P "Pi" Ai
+∏
+endsnippet
+
+snippet ,Q "Psi" Ai
+Ψ
+endsnippet
+
+snippet ,S "Sigma" Ai
+Σ
+endsnippet
+
+snippet ,U "Upsilon" Ai
+Υ
+endsnippet
+
+snippet ,O "Omega" Ai
+Ω
+endsnippet
+
+snippet ,C "Chi" Ai
+×
+endsnippet
+
+
+
+
+
+### snippets from my sty file ###
+
+snippet abs "absolut value"
+\abs{$1}
+endsnippet
+
+snippet act "action"
+\act
+endsnippet
+
+snippet adj "adjunction"
+\adj{$1}{$2}[$3][$4]
+endsnippet
+
+snippet an "angle brackets"
+\an{$1}
+endsnippet
+
+snippet at "restriction"
+\at{$1}
+endsnippet
+
+snippet aut "automorphisms"
+\aut{$1}
+endsnippet
+
+snippet bb "bb font"
+\bb{$1}
+endsnippet
+
+snippet bd "lower bullet"
+\bd{$1}
+endsnippet
+
+snippet bl "colour blue"
+\bl{$1}
+endsnippet
+
+snippet btr "commutative (base) triangle"
+\btr{$1}[$2]{$3}[$4]{$5}[$6]
+endsnippet
+
+snippet bu "upper bullet"
+\bu{$1}
+endsnippet
+
+snippet C "smooth section"
+\C[$1]
+endsnippet
+
+snippet c "composition"
+\c{$1}
+endsnippet
+
+snippet cal "caligrafic font" i
+\cal{$1}
+endsnippet
+
+snippet cat "Category font" i
+\cat{$1}
+endsnippet
+
+snippet cb "curly braces"
+\cb{$1}
+endsnippet
+
+snippet ce "Chevalley Eilenberg"
+\ce
+endsnippet
+
+snippet ch "cohomology"
+\ch{$1}
+endsnippet
+
+snippet cl "Clifford algebra"
+\cl{$1}
+endsnippet
+
+snippet com "commutator"
+\com{$1}{$2}[$3]
+endsnippet
+
+snippet csq "commutative square"
+\csq{$1}[$2][$3]{$4}[$5]{$6}[$7]{$8}
+endsnippet
+
+snippet ctg "cotangent bundle"
+\ctg{$1}
+endsnippet
+
+snippet ctr "commutative triangle"
+\ctr{$1}[$2]{$3}[$4]{$5}[$6]
+endsnippet
+
+snippet Cx "complex numbers"
+\Cx
+endsnippet
+
+snippet D "delta"
+\D
+endsnippet
+
+snippet dbd "differentiation"
+\dbd[$1]{$2}
+endsnippet
+
+snippet det "determinant"
+\det{$1}
+endsnippet
+
+snippet dga "dga"
+\dga{$1}{$2}
+endsnippet
+
+snippet dl "del" i
+∂
+endsnippet
+
+snippet dts "dots"
+\dts
+endsnippet
+
+snippet ds "oplus"
+\ds
+endsnippet
+
+snippet du "dual"
+\du{$1}
+endsnippet
+
+snippet dum "direct sum"
+\Dum[$1][$2]
+endsnippet
+
+snippet emap "extended mapping"
+\emap{$1}[$2]{$3}[$4][$5]
+endsnippet
+
+snippet etc "lower dots"
+\etc
+endsnippet
+
+snippet exp "exponential"
+\exp{$1}
+endsnippet
+
+snippet F "finite field"
+\F
+endsnippet
+
+snippet fk "frak font"
+\fk{$1}
+endsnippet
+
+snippet fms "differential forms"
+\fms{$1}[$2]
+endsnippet
+
+snippet fr "subscript free"
+\fr{$1}
+endsnippet
+
+snippet ftr "commutative (factoring) triangle"
+\ftr{$1}[$2]{$3}[$4]{$5}[$6]
+endsnippet
+
+snippet g "typical lie algebra"
+\g
+endsnippet
+
+snippet gb "G-bundle"
+\gb[$1]{$2}{$3}
+endsnippet
+
+snippet gc "graded commutative sign"
+\gc{$1}
+endsnippet
+
+snippet gcom "graded commutator"
+\gcom{$1}{$2}[$3][$4]
+endsnippet
+
+snippet gpd "groupoid"
+\gpd{$1}[$2][$3]{$4}
+endsnippet
+
+snippet gs "global sections functor"
+\gs{$1}{$2}
+endsnippet
+
+# snippet h "homology"
+# \h{$1}
+# endsnippet
+
+snippet ha "half"
+\ha
+endsnippet
+
+snippet HH "quaternions"
+\HH
+endsnippet
+
+snippet ho "homology"
+\ho{$1}
+endsnippet
+
+snippet hoe "homotopy equivalence data"
+\hoe{$1}[$2][$3]{$4}
+endsnippet
+
+snippet hom "homomorphism"
+\hom{$1}{$2}
+endsnippet
+
+snippet igpd "inline groupoid"
+\igpd{$1}{$2}
+endsnippet
+
+snippet imap "injective mapping" i
+\imap{$1}[$2]{$3}
+endsnippet
+
+snippet int "integral"
+\Int[$1][$2]
+endsnippet
+
+snippet inv "inverse with parentheses"
+\inv{$1}
+endsnippet
+
+snippet io "description"
+\io{$1}
+endsnippet
+
+snippet itr "subscript interacting"
+\itr{$1}
+endsnippet
+
+snippet iv "inverse"
+\iv{$1}
+endsnippet
+
+snippet K "generic field"
+\K
+endsnippet
+
+snippet la "left arrow"
+\la
+endsnippet
+
+snippet lb "line break" i
+\lb
+
+endsnippet
+
+snippet li "L infinity"
+\li
+endsnippet
+
+snippet lie "Lie derivative"
+\lie[$1]
+endsnippet
+
+snippet lmap "left mapping"
+\lmap{$1}[$2]{$3}
+endsnippet
+
+snippet lra "long right arrow"
+\lra
+endsnippet
+
+snippet m "multiplication"
+\m
+endsnippet
+
+snippet map "mapping" i
+\map{$1}[$2]{$3}
+endsnippet
+
+snippet mat "space of matrices"
+\mat{$1}{$2}
+endsnippet
+
+snippet mit "italic math font"
+\mit{$1}
+endsnippet
+
+snippet mt "maps to"
+\mt{$1}{$2}
+endsnippet
+
+snippet mto "maps to with function"
+\mto{$1}[$2]{$3}
+endsnippet
+
+snippet N "natural numbers"
+\N
+endsnippet
+
+snippet nb "nabla"
+∇
+endsnippet
+
+snippet ni "not in"
+\ni
+endsnippet
+
+snippet not "not"
+\not
+endsnippet
+
+snippet nrm "norm"
+\nrm{$1}
+endsnippet
+
+snippet orb "orbit"
+\orb{$1}
+endsnippet
+
+snippet O "ring of functions"
+\O
+endsnippet
+
+snippet P "Projective space"
+\P[$1]
+endsnippet
+
+snippet p "product in a category"
+\p
+endsnippet
+
+snippet pb "pull back"
+\pb{$1}
+endsnippet
+
+snippet pf "push forward"
+\pf{$1}
+endsnippet
+
+snippet pm "plus minus"
+\pm
+endsnippet
+
+snippet pn "parentheses"
+\pn{$1}
+endsnippet
+
+snippet pr "non indented paragraph "
+\pr
+
+endsnippet
+
+snippet Q "rational numbers"
+\Q
+endsnippet
+
+snippet q "question"
+\q{$1}
+endsnippet
+
+snippet qt "quater"
+\qt
+endsnippet
+
+snippet qu "quotient"
+\qu
+endsnippet
+
+snippet R "real numbers"
+\R
+endsnippet
+
+snippet ra "right arrow"
+\ra
+endsnippet
+
+snippet -> "cool right arrow" Ai
+→
+endsnippet
+
+snippet red "red coloured text"
+\red{$1}
+endsnippet
+
+snippet rd "third"
+\rd
+endsnippet
+
+snippet rk "rank"
+\rk{$1}
+endsnippet
+
+snippet Rn "Rn"
+\Rn
+endsnippet
+
+snippet rra "double right arrows"
+\rra
+endsnippet
+
+snippet s "such that vertical bar"
+\s
+endsnippet
+
+snippet sb "square brackets"
+\sb{$1}
+endsnippet
+
+snippet se "semi equivalence"
+\se
+endsnippet
+
+snippet ses "short exact sequence"
+\ses{$1}[$2]{$3}[$4]{$5}
+endsnippet
+
+snippet sg "subgroup"
+\sg
+endsnippet
+
+snippet sha "short half"
+\sha
+endsnippet
+
+snippet spn "span"
+\spn
+endsnippet
+
+snippet sqt "short quarter"
+\sqt
+endsnippet
+
+snippet sr "square root"
+\sr{$1}
+endsnippet
+
+snippet srd "short third"
+\srd
+endsnippet
+
+snippet st "superscript star"
+\st{$1}
+endsnippet
+
+snippet stb "stabilizer"
+\stb{$1}
+endsnippet
+
+snippet su "subset or equal"
+⊆
+endsnippet
+
+snippet sum "sum"
+\Sum[$1][$2]
+endsnippet
+
+snippet sym "symmetric algebra"
+\sym[$1]{$2}
+endsnippet
+
+snippet T "caligrafic T"
+\T
+endsnippet
+
+snippet tag "date tag"
+\tag{$1}
+endsnippet
+
+snippet ten "tensor"
+\ten[$1]
+endsnippet
+
+snippet tgt "tangent bundle"
+\tgt{$1}
+endsnippet
+
+snippet tp "transpose"
+\tp{$1}
+endsnippet
+
+snippet tpl "tuple"
+\tpl{$1}[$2]
+endsnippet
+
+snippet tr "trace"
+\tr{$1}
+endsnippet
+
+snippet tv "transverse"
+\tr
+endsnippet
+
+snippet tx "text" i
+\tx{$1}
+endsnippet
+
+snippet U "mathfrak unit"
+\U
+endsnippet
+
+snippet un "subset"
+\un
+endsnippet
+
+snippet vf "vector fields"
+\vf{$1}
+endsnippet
+
+snippet w "wedge product"
+\w
+endsnippet
+
+snippet W "exterior power"
+\W{$1}[$2]
+endsnippet
+
+snippet Z "integers"
+\Z
+endsnippet
+
+
+
+
+
+
+
+
+### environmental snippets ###
+snippet def "definition"
+\begin{definition}
+$1
+\end{definition}
+$0
+endsnippet
+
+snippet prop "Proposition" Ab
+\begin{proposition}
+	$1
+\end{proposition}
+$0
+endsnippet
+
+snippet cla "Claim"
+\begin{claim}
+$1
+\end{claim}
+$0
+endsnippet
+
+snippet pro "proof"
+\begin{proof}
+$1
+\end{proof}
+$0
+endsnippet
+
+snippet alis "align*"
+\begin{align*}
+$1
+\end{align*}
+$0
+endsnippet
+
+snippet rmk "remark"
+\begin{remark}
+$1
+\end{remark}
+$0
+endsnippet
+
+snippet exa "example"
+\begin{example}
+$1
+\end{example}
+$0
+endsnippet
+
+snippet exe "exercise"
+\begin{exercise}
+$1
+\end{exercise}
+$0
+endsnippet
+
+snippet obs "observation"
+\begin{observation}
+$1
+\end{observation}
+$0
+endsnippet
+
+snippet thm
+\begin{thm}[${1:author}]
+$2
+\end{thm}
+$0
+endsnippet
+
+
+
+
+
+
+
+
+
+
+### other snippets ###
+
+snippet ref "reference"
+(\ref{$1:$2})$0
+endsnippet
+
+snippet ci "cite"
+~\cite{$1}$0
+endsnippet
+
+snippet dec "Declare"
+\DeclareDocumentCommand{$1}{$2}{$3}
+endsnippet
+
+snippet nin "no indent"
+\noindent
+
+endsnippet

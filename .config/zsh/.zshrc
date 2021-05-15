@@ -25,6 +25,8 @@ if [ -d "$HOME/.bin" ] ;
   then PATH="$HOME/.bin:$PATH"
 fi
 
+PATH="$HOME/.local/bin:$PATH"
+
 
 # Load other files if existent.
 # [ -f "$HOME/.config/shortcutrc" ] && source "$HOME/.config/shortcutrc"

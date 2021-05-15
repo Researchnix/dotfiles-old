@@ -10,10 +10,11 @@
 
 """ sourcing
 source $HOME/.config/nvim/plug-config/mappings.vim
-" source $HOME/.config/nvim/plug-config/coc.vim
 source $HOME/.config/nvim/plug-config/vimwiki.vim
 source $HOME/.config/nvim/plug-config/nerdtree.vim
 source $HOME/.config/nvim/plug-config/citation.vim
+
+source $HOME/.config/nvim/plug-config/completion.vim
 
 
 
@@ -78,11 +79,15 @@ Plug 'majutsushi/tagbar' " Side panel to view coding structure. I had to install
 
 
 """ completion plugins
-" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" Plug 'zchee/deoplete-jedi' " Auto completion with all its
-" Plug 'ervandew/supertab' " little helpers
-Plug 'honza/vim-snippets' " and snippets
-" Plug 'SirVer/ultisnips' " Don't know exactly how this plays together with deoplete
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+
+Plug 'zchee/deoplete-jedi'
+Plug 'ervandew/supertab'
+
+
+
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'fatih/vim-go'
 
@@ -102,6 +107,9 @@ Plug 'fatih/vim-go'
 "Plug 'metakirby5/codi.vim'
 "Plug 'plytophogy/vim-virtualenv' " Suppose to make working with virtual environments easier. TODO learn this
 Plug 'neovimhaskell/haskell-vim'
+
+
+Plug 'neovim/nvim-lsp'
 call plug#end()
 
 
@@ -154,21 +162,10 @@ let g:airline_powerline_fonts = 1
 " Nerdcommenter
 let g:NERDSpaceDelims = 1
 
-" Deoplete
-let g:deoplete#enable_at_startup = 1
 
 " Disable documentation window
 set completeopt-=preview
 
-" Supertab
-" let g:SuperTabDefaultCompletionType = "<c-n>"
-
-" Usltisnips
-" let g:UltisnipsSnippetDirectories=['UltiSnips']
-" let g:UltiSnipsExpandTrigger="<tab>"
-" let g:UltiSnipsJumpForwardTrigger="<tab>"
-" let g:UltiSnipsJumpBackwardTrigger="<c-x>"
-" let g:UltiSnipsEditSplit="horizontal"
 
 " Devicons
 set guifont=SFMono:h11                                  " This is suppose to help with the right Icons
@@ -212,7 +209,7 @@ set title
 " Set the colorscheme and background
 syntax enable
 filetype plugin indent on
-colorscheme industry
+colorscheme rusticated
 
 " let g:solarized_termcolors=256
-set background=dark
+" set background=dark
