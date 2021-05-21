@@ -10,9 +10,12 @@ nmap <leader>c Hlrx
 nmap <c-c> :bd<CR>
 nmap <leader>ww :VimwikiIndex<CR>
 
-nmap <c-o> :!alacritty&<CR>
 nnoremap <leader>iq :read ~/.config/vimb/queue<CR> :!rm ~/.config/vimb/queue<CR>A]<Esc>I[][<Esc>hi
 
+
+
+" fuzzy finder
+nmap <c-o> :FZF<CR>
 
 
 
