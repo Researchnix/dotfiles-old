@@ -1,7 +1,6 @@
 let mapleader=","
 
 
-
 " testing area
 " a vmap that replaces spaces with hyphens
 nnoremap <leader>re :registers <CR>
@@ -16,6 +15,10 @@ nnoremap <leader>iq :read ~/.config/vimb/queue<CR> :!rm ~/.config/vimb/queue<CR>
 
 " fuzzy finder
 nmap <c-o> :FZF<CR>
+
+
+
+nmap <c-v> :VimtexView<CR>
 
 
 

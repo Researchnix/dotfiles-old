@@ -166,11 +166,11 @@ mouse:
 
     hide_when_typing: true
 
-    url:
-        launcher:
-            program: open
-            args: []
-        modifiers: None
+    # url:
+        # launcher:
+            # program: open
+            # args: []
+        # modifiers: None
 
 
 

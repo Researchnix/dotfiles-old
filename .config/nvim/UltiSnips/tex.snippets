@@ -1,34 +1,75 @@
-# A valid snippet should starts with:
-#
-#		snippet trigger_word [ "description" [ options ] ]
-#
-# and end with:
-#
-#		endsnippet
-#
-# Snippet options:
-#
-#		b - Beginning of line.
-#		i - In-word expansion.
-#		w - Word boundary.
-#		r - Regular expression
-#		e - Custom context snippet
-#		A - Snippet will be triggered automatically, when condition matches.
-#
-# Basic example:
-#
-# snippet emitter "emitter properties" b
-# private readonly ${1} = new Emitter<$2>()
-# public readonly ${1/^_(.*)/$1/}: Event<$2> = this.$1.event
-# endsnippet
-#
-# Online reference: https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
-# testing area
-
 snippet decl "DeclareDocumentCommand"
 DeclareDocumentCommand{$1}{$2}{$3}$0
 endsnippet
 
+
+snippet prf "proof environment" Ai
+\begin{proof}
+	$0
+\end{proof}
+endsnippet
+
+
+
+snippet lmm "lemma environment" Ai
+\begin{lemma}
+	$0
+\end{lemma}
+endsnippet
+
+# delimeters
+
+snippet \[ "math mode" Ai
+	\[ $1 \]
+$0
+endsnippet
+
+snippet .b "bullet" Ai
+● 
+endsnippet
+
+snippet it "item"
+\item
+    
+endsnippet
+
+
+snippet .dl "dell" Ai
+∂
+endsnippet
+
+
+snippet .I "integral" Ai
+∫
+endsnippet
+
+
+snippet .ne "not equal" Ai
+≠
+endsnippet
+
+snippet ,vp "varpi" Ai
+س  
+endsnippet
+
+
+snippet .pm "plus minus" Ai
+±
+endsnippet
+
+
+snippet .dm "diamond" Ai
+◇
+endsnippet
+
+snippet .c "composition" Ai
+○  
+endsnippet
+
+
+snippet .pr "perp" Ai
+┴
+endsnippet
 
 
 snippet ft "bold math font"
@@ -61,8 +102,8 @@ snippet $$ "new line math mode" i
 $$ $1 $$ $0
 endsnippet
 
-snippet $ "inline math mode" i
-$ $1 $ $0
+snippet $ "inline math mode" Ai
+$$1$$0
 endsnippet
 
 snippet ( "actual parentheses" i
@@ -77,13 +118,13 @@ snippet _ "subscript" i
 _{$1}$0
 endsnippet
 
-snippet { "braces" i
-{$1}$0
-endsnippet
+# snippet { "braces" i
+# {$1}$0
+# endsnippet
 
-snippet [ "brackets" i
-[$1]$0
-endsnippet
+# snippet [ "brackets" i
+# [$1]$0
+# endsnippet
 
 
 
@@ -281,8 +322,8 @@ snippet adj "adjunction"
 \adj{$1}{$2}[$3][$4]
 endsnippet
 
-snippet an "angle brackets"
-\an{$1}
+snippet ab "angle brackets"
+\ab{$1}
 endsnippet
 
 snippet at "restriction"
@@ -566,7 +607,7 @@ snippet N "natural numbers"
 \N
 endsnippet
 
-snippet nb "nabla"
+snippet .nb "nabla" Ai
 ∇
 endsnippet
 
@@ -610,7 +651,7 @@ snippet pm "plus minus"
 \pm
 endsnippet
 
-snippet pn "parentheses"
+snippet pn "parentheses" i
 \pn{$1}
 endsnippet
 
@@ -643,9 +684,7 @@ snippet ra "right arrow"
 \ra
 endsnippet
 
-snippet -> "cool right arrow" Ai
-→
-endsnippet
+
 
 snippet red "red coloured text"
 \red{$1}
@@ -667,8 +706,8 @@ snippet rra "double right arrows"
 \rra
 endsnippet
 
-snippet s "such that vertical bar"
-\s
+snippet .s "such that vertical bar" Ai
+│
 endsnippet
 
 snippet sb "square brackets"
@@ -715,7 +754,7 @@ snippet stb "stabilizer"
 \stb{$1}
 endsnippet
 
-snippet su "subset or equal"
+snippet .su "subset or equal" Ai
 ⊆
 endsnippet
 
@@ -775,8 +814,8 @@ snippet vf "vector fields"
 \vf{$1}
 endsnippet
 
-snippet w "wedge product"
-\w
+snippet .w "wedge product" Ai
+∧
 endsnippet
 
 snippet W "exterior power"
@@ -892,3 +931,32 @@ snippet nin "no indent"
 \noindent
 
 endsnippet
+
+
+
+
+# A valid snippet should starts with:
+#
+#		snippet trigger_word [ "description" [ options ] ]
+#
+# and end with:
+#
+#		endsnippet
+#
+# Snippet options:
+#
+#		b - Beginning of line.
+#		i - In-word expansion.
+#		w - Word boundary.
+#		r - Regular expression
+#		e - Custom context snippet
+#		A - Snippet will be triggered automatically, when condition matches.
+#
+# Basic example:
+#
+# snippet emitter "emitter properties" b
+# private readonly ${1} = new Emitter<$2>()
+# public readonly ${1/^_(.*)/$1/}: Event<$2> = this.$1.event
+# endsnippet
+#
+# Online reference: https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt

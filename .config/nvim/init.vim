@@ -136,9 +136,10 @@ let g:slime_target = "tmux"
 let g:auto_save = 1
 
 " vimtex
-let g:tex_flavor = 'latex'
+let g:tex_flavor = 'lualatex'
 " let g:vimtex_compiler_programe = 'pdflatex'
-let g:vimtex_compiler_programe = 'xelatex'
+" let g:vimtex_compiler_programe = 'xelatex'
+let g:vimtex_compiler_programe = 'lualatex'
 let g:vimtex_view_method = 'mupdf'
 let g:vimtex_view_general_viewer = 'mupdf'
 let g:vimtex_compiler_callback_hooks = ['MyTestHook']
@@ -209,7 +210,7 @@ set title
 " Set the colorscheme and background
 syntax enable
 filetype plugin indent on
-colorscheme rusticated
+colorscheme snow
 
 " let g:solarized_termcolors=256
 " set background=dark
