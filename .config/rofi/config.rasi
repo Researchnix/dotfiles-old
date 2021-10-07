@@ -144,3 +144,4 @@ configuration {
 /*	me-accept-custom: "Control+MouseDPrimary";*/
 }
 @import "android_notification.rasi"
+@theme "/usr/share/rofi/themes/Pop-Dark.rasi"

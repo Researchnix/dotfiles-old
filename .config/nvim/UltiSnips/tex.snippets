@@ -9,10 +9,18 @@ snippet prf "proof environment" Ai
 \end{proof}
 endsnippet
 
+snippet ^ "superscript" Ai
+^{$1}$0
+endsnippet
 
+snippet _ "subscript" Ai
+_{$1}$0
+endsnippet
 
-snippet lmm "lemma environment" Ai
+snippet lma "lemma environment" Ai
 \begin{lemma}
+\label{lmm:$1}
+\tag{$1}
 	$0
 \end{lemma}
 endsnippet
@@ -106,7 +114,7 @@ snippet $ "inline math mode" Ai
 $$1$$0
 endsnippet
 
-snippet ( "actual parentheses" i
+snippet ( "actual parentheses" Ai
 ($1)$0
 endsnippet
 
