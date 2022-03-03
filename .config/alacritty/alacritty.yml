@@ -17,31 +17,30 @@ window:
         y: 0
 
     dynamic_padding: true
-    decorations: none                       # buttonless or none
-    startup_mode:  Maximized                # SimpleFullscreen Windowed Maximized Fullscreen
+    decorations: buttonless # buttonless or none
+    startup_mode:  Windowed # SimpleFullscreen Windowed Maximized Fullscreen
 
     title: terminal
-scrolling:
+    scrolling:
     history: 10000
     multiplier: 3
-
-background_opacity: 1
+    window.opacity: 0.5
 
 font:
     normal:
-            family: mononoki Nerd Font Mono
+            family: UbuntuMono Nerd Font
             style: Regular
     bold:
-            family: mononoki Nerd Font Mono
+            family: UbuntuMono Nerd Font
             style: Bold
     italic:
-            family: mononoki Nerd Font Mono
+            family: UbuntuMono Nerd Font
             style: Italic
     bold_italic:
-            family: mononoki Nerd Font Mono
+            family: UbuntuMono Nerd Font
             style: Bold Italic
 
-    size: 8.5
+    size: 16
 
 
     offset:
@@ -166,11 +165,11 @@ mouse:
 
     hide_when_typing: true
 
-    # url:
-        # launcher:
-            # program: open
-            # args: []
-        # modifiers: None
+    hints:
+        launcher:
+            program: open
+            args: []
+        modifiers: None
 
 
 

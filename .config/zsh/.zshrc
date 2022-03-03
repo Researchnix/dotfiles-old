@@ -1,155 +1,104 @@
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-
-
-
-alias ls='ls --color=auto'
-alias dfs='git --git-dir=/home/lennart/.dotfiles/ --work-tree=/home/lennart/'
-alias ez='nvim /home/lennart/.config/zsh/.zshrc'
-alias ea='nvim /home/lennart/.config/alacritty/alacritty.yml'
-alias sz='source /home/lennart/.config/zsh/.zshrc'
-alias nn='nvim'
-
-
-
-
-
-
-
-
-ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
-if [[ ! -d $ZSH_CACHE_DIR ]]; then
-  mkdir $ZSH_CACHE_DIR
-fi
-
-# add my personal binaries to the path
-if [ -d "$HOME/.bin" ] ;
-  then PATH="$HOME/.bin:$PATH"
-fi
-
-PATH="$HOME/.local/bin:$PATH"
-
-
-# Load other files if existent.
-# [ -f "$HOME/.config/shortcutrc" ] && source "$HOME/.config/shortcutrc"
-# [ -f "$HOME/.config/alias.rc" ] && source "$HOME/.config/alias.rc"
-# [ -f "$HOME/.profile" ] && source "$HOME/.profile"
-
-
-
-# Path to your oh-my-zsh installation for arch linux
-# ZSH=/usr/share/oh-my-zsh/
-
-
-
-
-
-
-
-plugins=(git)
-
-
-
-
-
-
-
-rsx="https://github.com/researchnix"
-
-
-
-
-
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.config/zsh/oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# awesomepanda
-# clean
-# agnoster
-# kennethreitz
-# robbyrussell
-ZSH_THEME="agnoster"
+ZSH_THEME="robbyrussell"
 
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in $ZSH/themes/
+# If set to an empty array, this variable will have no effect.
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
 
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
 
+# Uncomment one of the following lines to change the auto-update behavior
+# zstyle ':omz:update' mode disabled  # disable automatic updates
+# zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
+# Uncomment the following line to change how often to auto-update (in days).
+# zstyle ':omz:update' frequency 13
 
-# copy of lukes fzf version
-# se() { du -a ~/.scripts/* ~/.config/* | awk '{print $2}' | fzf | xargs -r $EDITOR ;}
-# em() { du -a $HOME/Documents/md/* | awk '{print $2}' | fzf | xargs $EDITOR ;}
-# ef() { du -a ./* | awk '{print $2}' | fzf | xargs -r $EDITOR ;}
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS="true"
 
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
 
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
 
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
 
+# Uncomment the following line to display red dots whilst waiting for completion.
+# You can also set it to another string to have that shown instead of the default red dots.
+# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
+# COMPLETION_WAITING_DOTS="true"
 
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# my aliasses
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
+# HIST_STAMPS="mm/dd/yyyy"
 
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
 
-# # quick jumps to important notes
-# alias hs="hugo server -D"
-# alias words="cd $HOME/Documents/md && nvim words.md"
-# alias top="vtop -t nord"
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git)
 
-# alias cs="config status"
-# alias vw="nvim ~/Documents/md/index.md"
-# alias py="python3"
-# alias cls="config ls-tree --full-tree -r --name-only HEAD"
-
-# alias v="nvim"
-# alias w="nvim $HOME/Wiki/index.md -c 'Git pull'"
-# alias s="source"
-# alias c="clear"
-# alias t="tmux"
-# alias l="ls -lah"
-# alias ld="ls -ld -- */"
-# alias l.="ls -A | egrep '^\.'"
-# alias ll="ls -lah | less"
-# alias vim="nvim"
-# alias v="nvim"
-# alias f="vifm"
-# alias tr="tree"
-
-# alias ea="nvim $HOME/.config/alias.rc"
-# alias eb="nvim $HOME/.bib/b.bib"
-# alias en="nvim $HOME/.config/nvim/init.vim"
-# alias ej="nvim $HOME/Dropbox/ntb/src"
-# alias et="nvim $HOME/.tmux.conf"
-# alias ex="nvim $HOME/.xmonad/xmonad.hs"
-# alias ez="nvim $HOME/.config/zsh/.zshrc"
-# alias et="nvim $HOME/.config/alacritty/alacritty.yml"
-# alias ep="nvim $HOME/.config/brew/packages"
-
-# alias sz="source $HOME/.zshrc"
-# alias sx="xmonad --recompile && xmonad --restart"
-
-# alias config="git --git-dir=$HOME/.dfs/ --work-tree=$HOME"
-
-
-# # fix obvious typo's
-# alias cd..='cd ..'
-# alias pdw="pwd"
-
-
-# # readable output
-# alias df="df -h"
-
-
-# # shutdown or reboot
-# alias ssn="sudo shutdown now"
-# alias sr="sudo reboot"
-
-
-# Path to your oh-my-zsh installation.
-export ZSH="/home/lennart/.oh-my-zsh"
-# source oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
+# User configuration
 
+# export MANPATH="/usr/local/man:$MANPATH"
 
-# vi mode
-bindkey	-v
-export KEYTIMEOUT=1
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# aliases
+alias zshconfig="nvim ~/.config/zsh/.zshrc"
+alias sourcezsh="source ~/.config/zsh/.zshrc"
+alias n="nvim"
+alias dfs="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+
