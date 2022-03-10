@@ -1,18 +1,136 @@
+# vimwiki specific
+
 snippet [[ "new link" i
 [[ $1 ]] $0
 endsnippet
 
-snippet .ci "description" Ai
+
+
+# math unicode symbols
+
+snippet .nm "norm" Ai
+‖$1‖$0
+endsnippet
+
+snippet .b "bullet"
+●
+endsnippet
+
+snippet .ci "description"
 ∘
 endsnippet
 
-snippet .bx "black box" Ai
+snippet .bx "black box"
 ▪
 endsnippet
 
-snippet .bp "bullet point" Ai
-∙
+snippet .le "less or equal" Ai
+≤
 endsnippet
+
+snippet .su "subset or equal" Ai
+⊆
+endsnippet
+
+snippet .in "element in" Ai
+∈
+endsnippet
+
+snippet .dt "dot operator" Ai
+⋅
+endsnippet
+
+snippet ^ "superscript" Ai
+^{$1}$0
+endsnippet
+
+snippet _ "subscript" Ai
+_{$1}$0
+endsnippet
+
+snippet .dl "dell" Ai
+∂
+endsnippet
+
+snippet .I "integral" Ai
+∫
+endsnippet
+
+snippet .ne "not equal" Ai
+≠
+endsnippet
+
+snippet ,vp "varpi" Ai
+س  
+endsnippet
+
+snippet .pm "plus minus" Ai
+±
+endsnippet
+
+snippet .dm "diamond" Ai
+◇
+endsnippet
+
+snippet .cp "composition" Ai
+○
+endsnippet
+
+snippet .pr "perp" Ai
+┴
+endsnippet
+
+snippet .nb "nabla" Ai
+∇
+endsnippet
+
+snippet pm "plus minus"
+±
+endsnippet
+
+snippet .ra "right arrow" Ai
+→
+endsnippet
+
+snippet .s "such that vertical bar" Ai
+│
+endsnippet
+
+snippet se "semi equivalence"
+~
+endsnippet
+
+snippet .w "wedge product" Ai
+∧
+endsnippet
+
+snippet .st "star" Ai
+☆
+endsnippet
+
+
+
+
+# surroundings
+
+snippet $$ "new line math mode" Ai
+$$ $1 $$ $0
+endsnippet
+
+snippet $ "inline math mode" Ai
+$$1$$0
+endsnippet
+
+snippet ( "actual parentheses" Ai
+($1)$0
+endsnippet
+
+
+
+
+
+
+# umlaut snippets
 
 snippet ;a "umlaut a" Ai
 ä
@@ -21,3 +139,172 @@ endsnippet
 snippet ;o "umlaut o" Ai
 ö
 endsnippet
+
+snippet ;u "umlaut u" Ai
+ü
+endsnippet
+
+snippet ;A "umlaut a" Ai
+Ä
+endsnippet
+
+snippet ;O "umlaut o" Ai
+Ö
+endsnippet
+
+snippet ;U "umlaut u" Ai
+Ü
+endsnippet
+
+
+
+
+
+# lower case greek letters
+
+snippet ,a "alpha" Ai
+α
+endsnippet
+
+snippet ,b "beta" Ai
+β
+endsnippet
+
+snippet ,x "xi" Ai
+ξ
+endsnippet
+
+snippet ,d "delta" Ai
+δ
+endsnippet
+
+snippet ,e "epsilon" Ai
+ε
+endsnippet
+
+snippet ,f "phi" Ai
+φ
+endsnippet
+
+snippet ,g "gamma" Ai
+γ
+endsnippet
+
+snippet ,h "theta" Ai
+θ
+endsnippet
+
+snippet ,i "iota" Ai
+ι
+endsnippet
+
+snippet ,k "kappa" Ai
+κ
+endsnippet
+
+snippet ,l "lambda" Ai
+λ
+endsnippet
+
+snippet ,m "mu" Ai
+μ
+endsnippet
+
+snippet ,n "nu" Ai
+ν
+endsnippet
+
+snippet ,p "pi" Ai
+π
+endsnippet
+
+snippet ,q "psi" Ai
+ψ
+endsnippet
+
+snippet ,r "rho" Ai
+ρ
+endsnippet
+
+snippet ,s "sigma" Ai
+σ
+endsnippet
+
+snippet ,t "tau" Ai
+τ
+endsnippet
+
+snippet ,u "nu2" Ai
+υ
+endsnippet
+
+snippet ,w "omega" Ai
+ω
+endsnippet
+
+snippet ,c "chi" Ai
+χ
+endsnippet
+
+snippet ,y "eta" Ai
+η
+endsnippet
+
+snippet ,z "zeta" Ai
+ζ
+endsnippet
+
+
+# capital greek letters
+
+snippet ,X "Xi" Ai
+Ξ
+endsnippet
+
+snippet ,D "delta" Ai
+Δ
+endsnippet
+
+snippet ,F "Phi" Ai
+Φ
+endsnippet
+
+snippet ,G "Gamma" Ai
+Γ
+endsnippet
+
+snippet ,H "Theta" Ai
+Θ
+endsnippet
+
+snippet ,L "Lambda" Ai
+Λ
+endsnippet
+
+snippet ,P "Pi" Ai
+∏
+endsnippet
+
+snippet ,Q "Psi" Ai
+Ψ
+endsnippet
+
+snippet ,S "Sigma" Ai
+Σ
+endsnippet
+
+snippet ,U "Upsilon" Ai
+Υ
+endsnippet
+
+snippet ,O "Omega" Ai
+Ω
+endsnippet
+
+snippet ,C "Chi" Ai
+×
+endsnippet
+
+
+
+

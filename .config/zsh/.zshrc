@@ -1,14 +1,35 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# Operating specific settings
+if [[ `uname` == "Darwin" ]]; then
+    export PATH="/opt/homebrew/bin:$PATH"
+elif [[ `uname` == "Linux" ]]; then
+    echo "well, you've chosen Linux today."
+fi
+
+
+# add my personal $HOME/.bin to the PATH if it exists.
+# let's assume for now that it exists. tbd later.
+export PATH="$HOME/.bin:$PATH"
+
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.config/zsh/oh-my-zsh"
+
+
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+# ZSH_THEME="robbyrussell"
+# ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="spaceship"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -70,9 +91,15 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting \
+    zsh-history-substring-search copypath)
 
 source $ZSH/oh-my-zsh.sh
+
+# Another way to install zsh plugins on a mac, but not so great for cross
+# platform compatibility.
+# brew install zsh-syntax-highlighting and then add
+# source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # User configuration
 
@@ -102,3 +129,15 @@ alias sourcezsh="source ~/.config/zsh/.zshrc"
 alias n="nvim"
 alias dfs="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 
+
+# zsh-history-substring-search configuration
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+
+
+# vi mode
+bindkey -v
+export KEYTIMEOUT=1
+
+# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
+[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
