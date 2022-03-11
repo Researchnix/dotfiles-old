@@ -1,0 +1,152 @@
+#!/usr/bin/python3
+
+import os
+from functools import reduce
+from datetime import datetime
+
+
+
+
+def listNodes():
+    return unfoldNodes(["."])
+
+def listMarkdownNodes():
+    return list(filter(pathIsMarkdown, listNodes()))
+
+
+def containsDir(ps):
+    return reduce( \
+            lambda x, y: x or y \
+            , list(map(os.path.isdir, ps)) \
+            )
+
+def unfoldNodes(xs):
+    if containsDir(xs):
+        return unfoldNodes(flatten(list(map(replaceDir, xs))))
+    else:
+        return xs
+
+# expands a path to a list of subelements if it's a path
+# otherwise it keeps the file as is
+# it adds the relative location of the original path x
+def replaceDir(x):
+    # if the path leads to a file, there is nothing to do
+    if os.path.isfile(x):
+        return x
+    # if the path is a directory, return its sub paths
+    elif os.path.isdir(x):
+        # sub paths minus hidden paths
+        ps = list(filter(pathNotHidden, os.listdir(x)))
+        return list(map(lambda y : x + "/" + y, ps))
+
+def pathNotHidden(x):
+    return not x[0] == '.'
+
+
+def flatten(xs):
+    ys = []
+    for x in xs:
+        if type(x) == list:
+            ys += x
+        else:
+            ys.append(x)
+    return ys
+
+
+def pathIsMarkdown(x):
+    return x[-3:] == '.md'
+
+
+
+# Determine whether the file p already has a frontmatter
+# of the form
+# ---
+# title: ******
+# ---
+# For now I'm assuming that it's enough to probe the first line
+# if it is equal to '---', the test is passed.
+# I further assume that the second line is always the title.
+# IMPORTANT: This only works well with markdown files ,not jpgs
+def hasFrontmatter(p):
+    with open(p) as f:
+        cs = f.read().splitlines()
+    if len(cs) == 0:
+        return False
+    else:
+        return cs[0] == '---'
+
+def printFrontmatter(p):
+    with open(p) as f:
+        cs = f.read().splitlines()
+    for c in cs[:3]:
+        print(c)
+
+
+# Adds 3 lines to the beginning of the file where the title
+# is the name of the file without the file ending '.md'
+def addFrontmatter(p):
+    fm = '---\ntitle: ' + getTitle(p) + '\n---\n\n'
+    with open(p, 'r') as f:
+        cs = f.read()
+    cs = fm + cs
+    with open(p, 'w') as f:
+        f.write(cs)
+
+
+# get the title of a markdown file
+def getTitle(p):
+    f = p.split('/')[-1]
+    return f.split('.')[0]
+
+
+# a simple cat for nodes
+def cat(p):
+    with open(p) as f:
+        cs = f.read().splitlines()
+    for c in cs: print(c)
+
+# test if the the file has an old markdown-style title.
+def hasOldTitle(p):
+    with open(p) as f:
+        cs = f.read().splitlines()
+    if len(cs) == 0:
+        return False
+    elif '###' in cs[0]:
+        return False
+    else:
+        return '#' in cs[0]
+
+
+def cleanup():
+    xs = listMarkdownNodes()
+    ys = list(filter(lambda x : not hasFrontmatter(x), xs))
+    zs = list(filter(hasOldTitle, xs))
+    print(len(xs), ' in total')
+    print(len(ys), ' without frontmatter')
+    print(len(zs), ' have an old title')
+    for y in ys:
+        addFrontmatter(y)
+    print('done')
+
+
+def inspect(z):
+    print('inspecting ', z)
+    print('---')
+    print('last accessed')
+    print(os.path.getatime(z))
+    print(datetime.fromtimestamp(os.path.getatime(z)).strftime('%Y-%m-%d %H:%M:%S'))
+    print('---')
+    print('last modified')
+    print(os.path.getmtime(z))
+    print(datetime.fromtimestamp(os.path.getmtime(z)).strftime('%Y-%m-%d %H:%M:%S'))
+    print('---')
+    print('created')
+    print(os.path.getctime(z))
+    print(datetime.fromtimestamp(os.path.getctime(z)).strftime('%Y-%m-%d %H:%M:%S'))
+    print('---')
+    print(os.path.getsize(z), 'B in size')
+
+    #  print('---------')
+    #  print('adding frontmatter to ', ys[0])
+    #  addFrontmatter(ys[0])
+
