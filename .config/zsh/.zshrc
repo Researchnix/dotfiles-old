@@ -128,6 +128,7 @@ alias zshconfig="nvim ~/.config/zsh/.zshrc"
 alias sourcezsh="source ~/.config/zsh/.zshrc"
 alias n="nvim"
 alias dfs="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+alias top="vtop -t nord"
 
 
 # zsh-history-substring-search configuration
