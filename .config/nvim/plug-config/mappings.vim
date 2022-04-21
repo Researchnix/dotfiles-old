@@ -11,6 +11,8 @@ nmap <leader>ww :VimwikiIndex<CR>
 
 nnoremap <leader>iq :read ~/.config/vimb/queue<CR> :!rm ~/.config/vimb/queue<CR>A]<Esc>I[][<Esc>hi
 
+nmap <c-tab> :tabNext
+
 
 
 " fuzzy finder

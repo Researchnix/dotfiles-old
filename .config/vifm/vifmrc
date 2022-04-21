@@ -171,8 +171,9 @@ command! reload :write | restart
 " program.
 
 " Pdf
-filextype *.pdf mupdf %c %i &, apvlv %c, xpdf %c
-fileviewer *.pdf pdftotext -nopgbrk %c -
+" filextype *.pdf mupdf %c %i &, apvlv %c, xpdf %c
+" fileviewer *.pdf pdftotext -nopgbrk %c -
+filetype *.pdf {open} open %f
 
 " PostScript
 filextype *.ps,*.eps,*.ps.gz

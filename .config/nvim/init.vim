@@ -136,17 +136,17 @@ let g:slime_target = "tmux"
 let g:auto_save = 1
 
 " vimtex
-let g:tex_flavor = 'lualatex'
-" let g:vimtex_compiler_programe = 'pdflatex'
+" let g:tex_flavor = 'lualatex'
+let g:vimtex_compiler_programe = 'pdflatex'
 " let g:vimtex_compiler_programe = 'xelatex'
-let g:vimtex_compiler_programe = 'lualatex'
-let g:vimtex_view_method = 'mupdf'
-let g:vimtex_view_general_viewer = 'mupdf'
-let g:vimtex_compiler_callback_hooks = ['MyTestHook']
+" let g:vimtex_compiler_programe = 'lualatex'
+let g:vimtex_view_method = 'skim'
+let g:vimtex_view_general_viewer = 'skim'
+" let g:vimtex_compiler_callback_hooks = ['MyTestHook']
 
-function! MyTestHook(status)
-  echom a:status
-endfunction
+" function! MyTestHook(status)
+  " echom a:status
+" endfunction
 
 
 " Airline configuration

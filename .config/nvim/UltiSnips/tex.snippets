@@ -1,3 +1,34 @@
+
+
+
+
+
+
+
+# new snippets
+snippet hat "widehat for lifts in my thesis" i
+\widehat{$1}$0
+endsnippet
+
+snippet lab "label" i
+\label{$1:$2}$0
+endsnippet
+
+snippet ga "gather" i
+\begin{gather}
+	$0
+\end{gather}
+endsnippet
+
+snippet gas "gather" i
+\begin{gather*}
+	$0
+\end{gather*}
+endsnippet
+
+
+
+
 snippet decl "DeclareDocumentCommand"
 DeclareDocumentCommand{$1}{$2}{$3}$0
 endsnippet
@@ -118,6 +149,10 @@ snippet ( "actual parentheses" Ai
 ($1)$0
 endsnippet
 
+snippet [ "actual square brackets" Ai
+[$1]$0
+endsnippet
+
 snippet ^ "superscript" i
 ^{$1}$0
 endsnippet
@@ -128,10 +163,6 @@ endsnippet
 
 # snippet { "braces" i
 # {$1}$0
-# endsnippet
-
-# snippet [ "brackets" i
-# [$1]$0
 # endsnippet
 
 
@@ -718,7 +749,7 @@ snippet .s "such that vertical bar" Ai
 │
 endsnippet
 
-snippet sb "square brackets"
+snippet sb "macro square brackets" i
 \sb{$1}
 endsnippet
 
