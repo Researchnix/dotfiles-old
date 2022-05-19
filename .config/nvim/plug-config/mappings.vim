@@ -4,7 +4,7 @@ let mapleader=","
 " testing area
 " a vmap that replaces spaces with hyphens
 nnoremap <leader>re :registers <CR>
-nmap <space> va$l
+nmap <space> F$lvf$h
 nmap <leader>c Hlrx
 nmap <c-c> :bd<CR>
 nmap <leader>ww :VimwikiIndex<CR>
@@ -106,6 +106,7 @@ nnoremap <c-g> :Goyo<CR>
 nnoremap <leader>t :tabnew<CR>
 nnoremap <leader>n :tabprevious<CR>
 nnoremap <leader>m :tabnext<CR>
+nnoremap <leader>M :tabmove<CR>
 
 
 " Autosave

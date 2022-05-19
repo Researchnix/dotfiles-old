@@ -10,6 +10,10 @@ snippet hat "widehat for lifts in my thesis" i
 \widehat{$1}$0
 endsnippet
 
+snippet .hra "hookrightarrow" Ai
+ん
+endsnippet
+
 snippet lab "label" i
 \label{$1:$2}$0
 endsnippet
@@ -26,6 +30,17 @@ snippet gas "gather" i
 \end{gather*}
 endsnippet
 
+snippet .sim "similar" Ai
+∼
+endsnippet
+
+snippet .equ "weakly equivalent" Ai
+≃
+endsnippet
+
+snippet .iso "isomorphic" Ai
+≅
+endsnippet
 
 
 
@@ -96,13 +111,17 @@ snippet .pm "plus minus" Ai
 ±
 endsnippet
 
+snippet .mp "minus plus " Ai
+∓
+endsnippet
+
 
 snippet .dm "diamond" Ai
 ◇
 endsnippet
 
-snippet .c "composition" Ai
-○  
+snippet .co "composition" Ai
+○ 
 endsnippet
 
 
@@ -541,8 +560,8 @@ endsnippet
 # \h{$1}
 # endsnippet
 
-snippet ha "half"
-\ha
+snippet .ha "half" Ai
+½
 endsnippet
 
 snippet HH "quaternions"
@@ -686,10 +705,6 @@ snippet pf "push forward"
 \pf{$1}
 endsnippet
 
-snippet pm "plus minus"
-\pm
-endsnippet
-
 snippet pn "parentheses" i
 \pn{$1}
 endsnippet
@@ -707,8 +722,8 @@ snippet q "question"
 \q{$1}
 endsnippet
 
-snippet qt "quater"
-\qt
+snippet .qt "quater" Ai
+¼
 endsnippet
 
 snippet qu "quotient"
@@ -719,8 +734,8 @@ snippet R "real numbers"
 \R
 endsnippet
 
-snippet ra "right arrow"
-\ra
+snippet .ra "right arrow" Ai
+→
 endsnippet
 
 
@@ -903,14 +918,14 @@ endsnippet
 
 snippet alis "align*"
 \begin{align*}
-$1
+    $1
 \end{align*}
 $0
 endsnippet
 
 snippet rmk "remark"
 \begin{remark}
-$1
+    $1
 \end{remark}
 $0
 endsnippet
@@ -936,9 +951,9 @@ $1
 $0
 endsnippet
 
-snippet thm
+snippet thm "theorem"
 \begin{thm}[${1:author}]
-$2
+$2    
 \end{thm}
 $0
 endsnippet

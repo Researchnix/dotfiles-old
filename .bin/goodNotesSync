@@ -1,2 +1,2 @@
 #!/bin/bash
-cp -r $HOME/Dropbox/Apps/GoodNotes\ 5/nts/* $HOME/Notes/
+cp -r $HOME/Dropbox/Apps/GoodNotes\ 5/nts/* $HOME/Obsidian/
