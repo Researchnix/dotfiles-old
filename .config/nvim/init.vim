@@ -212,5 +212,5 @@ syntax enable
 filetype plugin indent on
 colorscheme snow
 
-" let g:solarized_termcolors=256
+let g:solarized_termcolors=256
 " set background=dark

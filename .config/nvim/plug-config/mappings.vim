@@ -14,6 +14,11 @@ nnoremap <leader>iq :read ~/.config/vimb/queue<CR> :!rm ~/.config/vimb/queue<CR>
 nmap <c-tab> :tabNext
 
 
+nmap <c-m> :VimwikiToggleListItem<CR>
+
+
+
+
 
 " fuzzy finder
 nmap <c-o> :FZF<CR>

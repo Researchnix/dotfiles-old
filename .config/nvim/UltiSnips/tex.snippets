@@ -10,12 +10,17 @@ snippet hat "widehat for lifts in my thesis" i
 \widehat{$1}$0
 endsnippet
 
+snippet l "better ell" i
+\l
+endsnippet
+
 snippet .hra "hookrightarrow" Ai
 ん
 endsnippet
 
 snippet lab "label" i
 \label{$1:$2}$0
+\tag{$2}
 endsnippet
 
 snippet ga "gather" i
@@ -63,7 +68,7 @@ snippet _ "subscript" Ai
 _{$1}$0
 endsnippet
 
-snippet lma "lemma environment" Ai
+snippet lma "lemma environment"
 \begin{lemma}
 \label{lmm:$1}
 \tag{$1}
@@ -641,6 +646,10 @@ snippet m "multiplication"
 \m
 endsnippet
 
+snippet .cd "cdot" Ai
+∙
+endsnippet
+
 snippet map "mapping" i
 \map{$1}[$2]{$3}
 endsnippet
@@ -760,7 +769,7 @@ snippet rra "double right arrows"
 \rra
 endsnippet
 
-snippet .s "such that vertical bar" Ai
+snippet .st "such that vertical bar" Ai
 │
 endsnippet
 
@@ -774,10 +783,6 @@ endsnippet
 
 snippet ses "short exact sequence"
 \ses{$1}[$2]{$3}[$4]{$5}
-endsnippet
-
-snippet sg "subgroup"
-\sg
 endsnippet
 
 snippet sha "short half"
@@ -888,11 +893,12 @@ endsnippet
 
 
 ### environmental snippets ###
-snippet def "definition"
+snippet def "definition environment"
 \begin{definition}
-$1
+\label{def:$1}
+\tag{$1}
+	$0
 \end{definition}
-$0
 endsnippet
 
 snippet prop "Proposition" Ab
@@ -923,18 +929,20 @@ snippet alis "align*"
 $0
 endsnippet
 
-snippet rmk "remark"
+snippet rmk "remark environment"
 \begin{remark}
-    $1
+\label{rmk:$1}
+\tag{$1}
+	$0
 \end{remark}
-$0
 endsnippet
 
-snippet exa "example"
+snippet exa "example environment"
 \begin{example}
-$1
+\label{exa:$1}
+\tag{$1}
+	$0
 \end{example}
-$0
 endsnippet
 
 snippet exe "exercise"
@@ -970,7 +978,7 @@ endsnippet
 ### other snippets ###
 
 snippet ref "reference"
-(\ref{$1:$2})$0
+(\ref{$1})$0
 endsnippet
 
 snippet ci "cite"
